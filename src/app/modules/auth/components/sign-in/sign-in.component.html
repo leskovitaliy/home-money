@@ -1,6 +1,10 @@
-<p class="text-xs-center">Войдите для работы</p>
+<p class="text-xs-center">Sign in for work</p>
+
 <div class="alert alert-{{message.type}}"
-     *ngIf="message.text">{{ message.text }}</div>
+     *ngIf="message.text">
+  {{ message.text }}
+</div>
+
 <form [formGroup]="form"
       (ngSubmit)="onSubmit()">
 
@@ -12,7 +16,7 @@
            class="form-control underlined"
            id="email"
            formControlName="email"
-           placeholder="Введите ваш email"/>
+           placeholder="Input email"/>
 
     <span class="form-help-text"
           *ngIf="form.get('email').invalid && form.get('email').touched">
@@ -24,12 +28,12 @@
 
   <div class="form-group"
        [ngClass]="{'has-error': form.get('password').invalid && form.get('password').touched }">
-    <label for="password">Пароль</label>
+    <label for="password">Password</label>
     <input type="password"
            class="form-control underlined"
            id="password"
            formControlName="password"
-           placeholder="Пароль">
+           placeholder="Input password">
 
     <span class="form-help-text"
           *ngIf="form.get('password').invalid && form.get('password').touched">
@@ -46,12 +50,12 @@
     <button type="submit"
             class="btn btn-block btn-primary"
             [disabled]="form.invalid">
-      Войти
+      Sign in
     </button>
   </div>
   <div class="form-group">
     <p class="text-muted text-xs-center">
-      Нет аккаунта? <a href="#">Зарегистрироваться!</a>
+      No account? <a [routerLink]="'/sign-up'">Sign Up!</a>
     </p>
   </div>
 </form>
