@@ -50,7 +50,7 @@ export class SignInComponent implements OnInit {
             this.message.text = '';
             localStorage.setItem('user', JSON.stringify(user));
             this.authService.login();
-            // this.router.navigate(['']);
+            this.router.navigate(['/system', 'bill']);
           } else {
             this._showMessage({text: 'Password incorrect', type: 'danger'});
           }
