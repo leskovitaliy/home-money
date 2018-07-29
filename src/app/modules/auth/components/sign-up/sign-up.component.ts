@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { IUser } from '../../../../shared/interface/user';
 import { UsersService } from '../../../../shared/services/users.service';
@@ -22,7 +22,7 @@ export class SignUpComponent implements OnInit {
 
   ngOnInit() {
     this.form = this.fb.group({
-      email: ['', [Validators.required, Validators.email]],
+      email: ['', [Validators.required, Validators.email], this.forbiddenEmails.bind(this)],
       password: ['', [Validators.required, Validators.minLength(6)]],
       name: ['', [Validators.required]],
       agree: [false, [Validators.requiredTrue]]
@@ -43,6 +43,19 @@ export class SignUpComponent implements OnInit {
           }
         });
       });
+  }
+
+  forbiddenEmails(control: FormControl): Promise<any> {
+    return new Promise((resolve, reject) => {
+      this.usersService.getUserByEmail(control.value)
+        .subscribe((user: IUser) => {
+          if (user && user[0] && user[0].email === control.value) {
+            resolve({ forbiddenEmail: true });
+          } else {
+            return resolve(null);
+          }
+        });
+    });
   }
 
 }

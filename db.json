@@ -7,35 +7,12 @@
       "name": "Администратор"
     },
     {
-      "email": "test1@gmail.com",
-      "password": "test123",
-      "name": "Alex",
-      "id": 2
-    },
-    {
       "email": "test2@gmail.com",
-      "password": "test123",
-      "name": "Test2",
-      "id": 3
-    },
-    {
-      "email": "test3@gmail.com",
-      "password": "123456",
-      "name": "test3",
-      "id": 4
-    },
-    {
-      "email": "test4@gmail.com",
-      "password": "test123",
-      "name": "test4",
-      "id": 5
-    },
-    {
-      "email": "test5@gmail.com",
-      "password": "123456",
-      "name": "test5",
-      "id": 6
+      "password": "Test123",
+      "name": "test2",
+      "id": 2
     }
+
   ],
   "bill": {
     "value": 100000,
