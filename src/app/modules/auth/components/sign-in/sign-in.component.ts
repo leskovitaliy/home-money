@@ -1,10 +1,10 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {UsersService} from '../../../../shared/services/users.service';
-import {IUser} from '../../../../shared/interface/user';
-import {Message} from '../../../../shared/models/message';
-import {AuthService} from '../../../../shared/services/auth.service';
-import {Router} from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { IMessage } from '../../../../shared/interface/message';
+import { UsersService } from '../../../../shared/services/users.service';
+import { IUser } from '../../../../shared/interface/user';
+import { AuthService } from '../../../../shared/services/auth.service';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-in',
@@ -14,15 +14,23 @@ import {Router} from '@angular/router';
 export class SignInComponent implements OnInit {
 
   form: FormGroup;
-  message: Message;
+  message: IMessage = { text: '', type: 'danger' };
 
   constructor(private fb: FormBuilder,
               private usersService: UsersService,
               private authService: AuthService,
-              private router: Router) { }
+              private router: Router,
+              private route: ActivatedRoute) {
+  }
 
   ngOnInit() {
-    this.message = new Message('danger', '');
+    this.route.queryParams
+      .subscribe((params: Params) => {
+        if (params['nowCanLogin']) {
+          this._showMessage({text: 'Now you can sign in', type: 'success'});
+        }
+      });
+
     this.form = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]]
@@ -44,16 +52,16 @@ export class SignInComponent implements OnInit {
             this.authService.login();
             // this.router.navigate(['']);
           } else {
-            this._showMessage('Password incorrect');
+            this._showMessage({text: 'Password incorrect', type: 'danger'});
           }
         } else {
-          this._showMessage('Such user does not exist');
+          this._showMessage({text: 'Such user does not exist', type: 'danger'});
         }
       });
   }
 
-  private _showMessage(text: string, type: string = 'danger') {
-    this.message = new Message(type, text);
+  private _showMessage(message: IMessage) {
+    this.message = message;
     setTimeout(() => {
       this.message.text = '';
     }, 5000);
