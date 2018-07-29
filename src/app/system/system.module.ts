@@ -3,6 +3,10 @@ import { CommonModule } from '@angular/common';
 import { SharedModule } from '../shared/shared.module';
 import { SystemRoutingModules } from './system-routing.modules';
 import { SystemComponent } from './pages/system/system.component';
+import { BillComponent } from './pages/bill/bill.component';
+import { HistoryComponent } from './pages/history/history.component';
+import { PlanningComponent } from './pages/planning/planning.component';
+import { RecordsComponent } from './pages/records/records.component';
 
 @NgModule({
   imports: [
@@ -10,6 +14,12 @@ import { SystemComponent } from './pages/system/system.component';
     SharedModule,
     SystemRoutingModules
   ],
-  declarations: [SystemComponent]
+  declarations: [
+    SystemComponent,
+    BillComponent,
+    HistoryComponent,
+    PlanningComponent,
+    RecordsComponent
+   ]
 })
 export class SystemModule { }
