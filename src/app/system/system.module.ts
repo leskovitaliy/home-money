@@ -8,6 +8,7 @@ import { HistoryComponent } from './pages/history/history.component';
 import { PlanningComponent } from './pages/planning/planning.component';
 import { RecordsComponent } from './pages/records/records.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   imports: [
@@ -21,7 +22,8 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
     HistoryComponent,
     PlanningComponent,
     RecordsComponent,
-    SidebarComponent
+    SidebarComponent,
+    HeaderComponent
    ]
 })
 export class SystemModule { }
