@@ -1,16 +1,18 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { BaseApi } from '../../shared/core/base-api';
 import { pluckAndCatch } from '../../shared/utils/response-formater';
 
 @Injectable()
-export class BillService {
+export class BillService extends BaseApi {
 
-  constructor(private http: HttpClient) { }
+  constructor(public http: HttpClient) {
+    super(http);
+  }
 
   getBill(): Observable<any> {
-    return this.http.get('http://localhost:3000/bill')
-      .pipe(pluckAndCatch);
+    return this.get('bill');
   }
 
   getCurrency(base: string = 'UAH') {
