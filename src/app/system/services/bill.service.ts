@@ -15,8 +15,9 @@ export class BillService extends BaseApi {
     return this.get('bill');
   }
 
-  getCurrency(base: string = 'UAH') {
-    return this.http.get(`http://data.fixer.io/api/latest?access_key=9865d912f3be89e428547340d10885c7&symbols=${base}`)
+  getCurrency(base: string = 'RUB') {
+    // return this.http.get(`http://data.fixer.io/api/latest?access_key=9865d912f3be89e428547340d10885c7&symbols=${base}`)
+    return this.http.get(`http://data.fixer.io/api/latest?access_key=9865d912f3be89e428547340d10885c7`)
       .pipe(pluckAndCatch);
   }
 }

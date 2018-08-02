@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { combineLatest } from 'rxjs';
-import { takeWhile, tap } from 'rxjs/operators';
+import { combineLatest, pipe, Subscribable, Subscription } from 'rxjs';
+import { delay, takeWhile, tap } from 'rxjs/operators';
+import { IBill } from '../../interfaces/bill';
 import { BillService } from '../../services/bill.service';
 
 @Component({
@@ -10,25 +11,48 @@ import { BillService } from '../../services/bill.service';
 })
 export class BillComponent implements OnInit, OnDestroy {
 
+  bill$: Subscription;
+  currency$: Subscription;
+
   private _alive = true;
+
+  currency: any;
+  bill: IBill;
+
+  isLoaded = false;
 
   constructor(private billService: BillService) {
   }
 
   ngOnInit() {
-    combineLatest(
+    this.bill$ = combineLatest(
       this.billService.getBill(),
       this.billService.getCurrency()
     ).pipe(
       takeWhile(() => this._alive),
       tap(data => {
         console.log('data: ', data);
+        this.bill = data[0];
+        this.currency = data[1];
+        this.isLoaded = true;
       })
     ).subscribe();
   }
 
   ngOnDestroy() {
    this._alive = false;
+   this.bill$.unsubscribe();
+   this.currency$.unsubscribe();
+  }
+
+  onRefresh() {
+    this.isLoaded = false;
+    this.currency$ = this.billService.getCurrency()
+      .pipe(delay(500))
+      .subscribe((currency: any) => {
+        this.currency = currency;
+        this.isLoaded = true;
+      });
   }
 
 }
