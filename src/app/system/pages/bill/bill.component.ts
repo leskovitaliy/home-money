@@ -31,7 +31,6 @@ export class BillComponent implements OnInit, OnDestroy {
     ).pipe(
       takeWhile(() => this._alive),
       tap(data => {
-        console.log('data: ', data);
         this.bill = data[0];
         this.currency = data[1];
         this.isLoaded = true;

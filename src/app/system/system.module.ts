@@ -12,6 +12,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { HeaderComponent } from './components/header/header.component';
 import { BillCardComponent } from './components/bill-card/bill-card.component';
 import { CurrencyCardComponent } from './components/currency-card/currency-card.component';
+import { CustomDatePipe } from './pipes/custom-date.pipe';
 
 @NgModule({
   imports: [
@@ -28,7 +29,8 @@ import { CurrencyCardComponent } from './components/currency-card/currency-card.
     SidebarComponent,
     HeaderComponent,
     BillCardComponent,
-    CurrencyCardComponent
+    CurrencyCardComponent,
+    CustomDatePipe
    ],
   providers: [BillService]
 })

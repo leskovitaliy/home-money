@@ -17,12 +17,12 @@
           <tr>
             <td>гривна</td>
             <td>1</td>
-            <td>{{ currency?.date }}}</td>
+            <td>{{ currency?.date | customDate: 'YYYY-MM-DD'}}</td>
           </tr>
           <tr *ngFor="let item of currencies">
             <td>{{ item }}</td>
             <td>{{ currency.rates[item] }}</td>
-            <td>{{ currency.date }}</td>
+            <td>{{ currency.date | customDate: 'YYYY-MM-DD'}}</td>
           </tr>
           </tbody>
         </table>
