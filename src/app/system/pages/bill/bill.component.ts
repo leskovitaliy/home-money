@@ -41,7 +41,9 @@ export class BillComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
    this._alive = false;
    this.bill$.unsubscribe();
-   this.currency$.unsubscribe();
+   if (this.currency$) {
+     this.currency$.unsubscribe();
+   }
   }
 
   onRefresh() {

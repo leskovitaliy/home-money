@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SharedModule } from '../shared/shared.module';
 import { BillService } from './services/bill.service';
+import { CategoriesService } from './services/categories.service';
 import { SystemRoutingModules } from './system-routing.modules';
 import { SystemComponent } from './pages/system/system.component';
 import { BillComponent } from './pages/bill/bill.component';
@@ -13,6 +14,9 @@ import { HeaderComponent } from './components/header/header.component';
 import { BillCardComponent } from './components/bill-card/bill-card.component';
 import { CurrencyCardComponent } from './components/currency-card/currency-card.component';
 import { CustomDatePipe } from './pipes/custom-date.pipe';
+import { AddEventComponent } from './components/add-event/add-event.component';
+import { AddCategoryComponent } from './components/add-category/add-category.component';
+import { EditCategoryComponent } from './components/edit-category/edit-category.component';
 
 @NgModule({
   imports: [
@@ -30,8 +34,14 @@ import { CustomDatePipe } from './pipes/custom-date.pipe';
     HeaderComponent,
     BillCardComponent,
     CurrencyCardComponent,
-    CustomDatePipe
+    CustomDatePipe,
+    AddEventComponent,
+    AddCategoryComponent,
+    EditCategoryComponent
    ],
-  providers: [BillService]
+  providers: [
+    BillService,
+    CategoriesService
+  ]
 })
 export class SystemModule { }

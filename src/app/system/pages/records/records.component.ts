@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ICategory } from '../../interfaces/category';
 
 @Component({
   selector: 'app-records',
@@ -10,6 +11,10 @@ export class RecordsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+
+  addCategory(category: ICategory) {
+    // add to array
   }
 
 }
