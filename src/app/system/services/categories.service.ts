@@ -8,12 +8,19 @@ import { ICategory } from '../interfaces/category';
   providedIn: 'root'
 })
 export class CategoriesService extends BaseApi {
-
   constructor(public http: HttpClient) {
     super(http);
   }
 
   addCategory(category: ICategory): Observable<ICategory> {
     return this.post('categories', category);
+  }
+
+  getCategories(): Observable<ICategory[]> {
+    return this.getSimple('categories');
+  }
+
+  updateCategory(category: ICategory): Observable<ICategory> {
+    return this.put(`categories/${category.id}`, category);
   }
 }

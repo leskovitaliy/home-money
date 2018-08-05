@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { pluckAndCatch } from '../utils/response-formater';
+import { pluckAndCatch, pluckAndCatchSimple } from '../utils/response-formater';
 
 @Injectable()
 export class BaseApi {
@@ -17,6 +17,11 @@ export class BaseApi {
   public get(url: string = '') {
     return this.http.get(this.getUrl(url))
       .pipe(pluckAndCatch);
+  }
+
+  public getSimple(url: string = '') {
+    return this.http.get(this.getUrl(url))
+      .pipe(pluckAndCatchSimple);
   }
 
   public post(url: string = '', data: any = {}): Observable<any> {

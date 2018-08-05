@@ -4,7 +4,10 @@
   </h3>
 </div>
 
-<section class="section">
+<section *ngIf="!isLoaded" class="section text-center">Loading...</section>
+
+<section class="section"
+         *ngIf="isLoaded">
   <div class="row">
     <div class="col-md-6">
       <app-add-event></app-add-event>
@@ -15,7 +18,8 @@
   </div>
   <div class="row">
     <div class="col-md-6">
-      <app-edit-category></app-edit-category>
+      <app-edit-category [categories]="categories"
+                         (onCategoryEdit)="categoryEdit($event)"></app-edit-category>
     </div>
   </div>
 </section>
