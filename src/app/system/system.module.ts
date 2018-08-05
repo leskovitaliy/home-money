@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { SharedModule } from '../shared/shared.module';
 import { BillService } from './services/bill.service';
 import { CategoriesService } from './services/categories.service';
+import { EventsService } from './services/events.service';
 import { SystemRoutingModules } from './system-routing.modules';
 import { SystemComponent } from './pages/system/system.component';
 import { BillComponent } from './pages/bill/bill.component';
@@ -41,7 +42,8 @@ import { EditCategoryComponent } from './components/edit-category/edit-category.
    ],
   providers: [
     BillService,
-    CategoriesService
+    CategoriesService,
+    EventsService
   ]
 })
 export class SystemModule { }

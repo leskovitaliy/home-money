@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { BaseApi } from '../../shared/core/base-api';
 import { pluckAndCatch } from '../../shared/utils/response-formater';
+import { IBill } from '../interfaces/bill';
 
 @Injectable()
 export class BillService extends BaseApi {
@@ -13,6 +14,10 @@ export class BillService extends BaseApi {
 
   getBill(): Observable<any> {
     return this.get('bill');
+  }
+
+  updateBill(bill: IBill): Observable<IBill> {
+    return this.put('bill', bill);
   }
 
   getCurrency(base: string = 'RUB') {

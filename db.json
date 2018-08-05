@@ -20,7 +20,7 @@
     }
   ],
   "bill": {
-    "value": 100000,
+    "value": 93614,
     "currency": "RUB"
   },
   "categories": [
@@ -35,9 +35,9 @@
       "id": 2
     },
     {
-      "id": 3,
       "name": "Машина",
-      "capacity": 7000
+      "capacity": 7002,
+      "id": 3
     },
     {
       "name": "new",
@@ -90,6 +90,46 @@
       "date": "10.06.2017 14:01:58",
       "id": 5,
       "description": "Заправка + проход ТО"
+    },
+    {
+      "type": "outcome",
+      "amount": 10004,
+      "category": "2",
+      "currentDate": "05.08.2018 20:31:52",
+      "description": "test",
+      "id": 6
+    },
+    {
+      "type": "income",
+      "amount": 2333,
+      "category": 1,
+      "currentDate": "05.08.2018 20:33:03",
+      "description": "test",
+      "id": 7
+    },
+    {
+      "type": "income",
+      "amount": 1222,
+      "category": 1,
+      "date": "05.08.2018 20:44:43",
+      "description": "test",
+      "id": 8
+    },
+    {
+      "type": "income",
+      "amount": 100,
+      "category": "2",
+      "date": "05.08.2018 20:51:28",
+      "description": "test33",
+      "id": 9
+    },
+    {
+      "type": "outcome",
+      "amount": 37,
+      "category": "5",
+      "date": "05.08.2018 20:51:44",
+      "description": " teeeee",
+      "id": 10
     }
   ]
 }
