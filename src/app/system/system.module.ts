@@ -18,6 +18,10 @@ import { CustomDatePipe } from './pipes/custom-date.pipe';
 import { AddEventComponent } from './components/add-event/add-event.component';
 import { AddCategoryComponent } from './components/add-category/add-category.component';
 import { EditCategoryComponent } from './components/edit-category/edit-category.component';
+import { HistoryChartComponent } from './pages/history/components/history-chart/history-chart.component';
+import { HistoryEventsComponent } from './pages/history/components/history-events/history-events.component';
+import { HistoryDetailComponent } from './pages/history/components/history-detail/history-detail.component';
+import { HistoryFilterComponent } from './pages/history/components/history-filter/history-filter.component';
 
 @NgModule({
   imports: [
@@ -38,7 +42,11 @@ import { EditCategoryComponent } from './components/edit-category/edit-category.
     CustomDatePipe,
     AddEventComponent,
     AddCategoryComponent,
-    EditCategoryComponent
+    EditCategoryComponent,
+    HistoryChartComponent,
+    HistoryEventsComponent,
+    HistoryDetailComponent,
+    HistoryFilterComponent
    ],
   providers: [
     BillService,
