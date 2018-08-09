@@ -60,7 +60,7 @@ export class AddEventComponent implements OnInit, OnDestroy {
   onSubmit(form: NgForm) {
     const {amount, description, category, type} = form.value;
 
-    if (amount < 0) {
+    if (+amount < 0) {
       return;
     }
 
@@ -79,7 +79,7 @@ export class AddEventComponent implements OnInit, OnDestroy {
         let value = 0;
 
         if (type === 'outcome') {
-          if (amount > bill.value) {
+          if (+amount > bill.value) {
             // ошибка
             this.showMessage(`На счету недостаточно средств. Вам не хватает: ${amount - bill.value}`);
             return;

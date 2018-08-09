@@ -20,7 +20,7 @@
     }
   ],
   "bill": {
-    "value": 93614,
+    "value": 60793,
     "currency": "RUB"
   },
   "categories": [
@@ -38,16 +38,6 @@
       "name": "Машина",
       "capacity": 7002,
       "id": 3
-    },
-    {
-      "name": "new",
-      "capacity": 10000,
-      "id": 4
-    },
-    {
-      "name": "my category",
-      "capacity": 1000,
-      "id": 5
     }
   ],
   "events": [
@@ -68,68 +58,52 @@
       "description": "Купил посудомоечную машину"
     },
     {
-      "type": "income",
-      "amount": 1480,
-      "category": 2,
-      "date": "17.06.2017 14:00:48",
-      "id": 3,
-      "description": "Поход в окей с баллами. Бесплатная еда"
-    },
-    {
       "type": "outcome",
-      "amount": 2470,
-      "category": 2,
-      "date": "17.06.2017 14:00:58",
-      "id": 4,
-      "description": "Закупка на неделю"
-    },
-    {
-      "type": "outcome",
-      "amount": 4000,
+      "amount": 3500,
       "category": 3,
-      "date": "10.06.2017 14:01:58",
-      "id": 5,
-      "description": "Заправка + проход ТО"
+      "date": "08.08.2018 22:41:03",
+      "description": "test",
+      "id": 3
     },
     {
       "type": "outcome",
-      "amount": 10004,
+      "amount": 1444,
+      "category": 1,
+      "date": "08.08.2018 23:01:24",
+      "description": "444",
+      "id": 4
+    },
+    {
+      "type": "outcome",
+      "amount": 1444,
+      "category": 1,
+      "date": "08.08.2018 23:01:33",
+      "description": "333",
+      "id": 5
+    },
+    {
+      "type": "outcome",
+      "amount": 1000,
       "category": "2",
-      "currentDate": "05.08.2018 20:31:52",
-      "description": "test",
+      "date": "09.08.2018 21:27:11",
+      "description": "products",
       "id": 6
     },
     {
-      "type": "income",
-      "amount": 2333,
-      "category": 1,
-      "currentDate": "05.08.2018 20:33:03",
-      "description": "test",
+      "type": "outcome",
+      "amount": 100,
+      "category": "2",
+      "date": "09.08.2018 21:31:57",
+      "description": "pr",
       "id": 7
     },
     {
-      "type": "income",
-      "amount": 1222,
-      "category": 1,
-      "date": "05.08.2018 20:44:43",
-      "description": "test",
-      "id": 8
-    },
-    {
-      "type": "income",
-      "amount": 100,
-      "category": "2",
-      "date": "05.08.2018 20:51:28",
-      "description": "test33",
-      "id": 9
-    },
-    {
       "type": "outcome",
-      "amount": 37,
-      "category": "5",
-      "date": "05.08.2018 20:51:44",
-      "description": " teeeee",
-      "id": 10
+      "amount": 500,
+      "category": "2",
+      "date": "09.08.2018 21:33:35",
+      "description": "eat",
+      "id": 8
     }
   ]
 }
