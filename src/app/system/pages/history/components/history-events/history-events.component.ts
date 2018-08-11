@@ -9,6 +9,10 @@ import { IEvent } from '../../../../interfaces/event';
 })
 export class HistoryEventsComponent implements OnInit {
 
+  searchValue = '';
+  searchPlaceholder = 'Сумма';
+  searchField = 'amount';
+
   @Input() categories: ICategory[] = [];
   @Input() events: IEvent[] = [];
 
@@ -26,6 +30,19 @@ export class HistoryEventsComponent implements OnInit {
       'label-danger': e.type === 'outcome',
       'label-success': e.type === 'income'
     };
+  }
+
+  changeCriteria(field: string) {
+    const nameMap = {
+      amount: 'Сумма',
+      date: 'Дата',
+      category: 'Категория',
+      type: 'Тип'
+    };
+
+    this.searchPlaceholder = nameMap[field];
+    this.searchField = field;
+
   }
 
 }
