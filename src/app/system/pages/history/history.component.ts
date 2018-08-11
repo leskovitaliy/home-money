@@ -55,7 +55,7 @@ export class HistoryComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     if (this.data$) {
-      this.data.unsubscribe();
+      this.data$.unsubscribe();
     }
   }
 
