@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { AuthGuard } from '../shared/services/auth.guard';
 import { BillComponent } from './pages/bill/bill.component';
 import { HistoryDetailComponent } from './pages/history/components/history-detail/history-detail.component';
 import { HistoryComponent } from './pages/history/history.component';
@@ -11,6 +12,7 @@ const routes = [
   {
     path: '',
     component: SystemComponent,
+    canActivate: [AuthGuard],
     children: [
       {
         path: 'bill',

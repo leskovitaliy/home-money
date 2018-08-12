@@ -28,6 +28,8 @@ export class SignInComponent implements OnInit {
       .subscribe((params: Params) => {
         if (params['nowCanLogin']) {
           this._showMessage({text: 'Now you can sign in', type: 'success'});
+        } else if (params['accessDenied']) {
+          this._showMessage({text: 'To work with the system you need to login', type: 'warning'});
         }
       });
 
