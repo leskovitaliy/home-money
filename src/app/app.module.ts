@@ -9,10 +9,12 @@ import { AuthGuard } from './shared/services/auth.guard';
 import { UsersService } from './shared/services/users.service';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthService } from './shared/services/auth.service';
+import { NotFoundComponent } from './shared/pages/not-found/not-found.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
