@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { IUser } from '../../../../shared/interface/user';
 import { UsersService } from '../../../../shared/services/users.service';
@@ -16,11 +17,14 @@ export class SignUpComponent implements OnInit {
 
   constructor(private fb: FormBuilder,
               private usersService: UsersService,
-              private router: Router) {
+              private router: Router,
+              private title: Title) {
 
   }
 
   ngOnInit() {
+    this.title.setTitle('Sign Up');
+
     this.form = this.fb.group({
       email: ['', [Validators.required, Validators.email], this.forbiddenEmails.bind(this)],
       password: ['', [Validators.required, Validators.minLength(6)]],

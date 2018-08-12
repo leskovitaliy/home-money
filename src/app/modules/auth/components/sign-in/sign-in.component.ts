@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Title } from '@angular/platform-browser';
 import { fadeStateTrigger } from '../../../../shared/animations/fade.animations';
 import { IMessage } from '../../../../shared/interface/message';
 import { UsersService } from '../../../../shared/services/users.service';
@@ -22,10 +23,13 @@ export class SignInComponent implements OnInit {
               private usersService: UsersService,
               private authService: AuthService,
               private router: Router,
-              private route: ActivatedRoute) {
+              private route: ActivatedRoute,
+              private title: Title) {
   }
 
   ngOnInit() {
+    this.title.setTitle('Sign In');
+
     this.route.queryParams
       .subscribe((params: Params) => {
         if (params['nowCanLogin']) {
