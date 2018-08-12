@@ -13,6 +13,7 @@ import { EventsService } from '../../services/events.service';
 export class HistoryComponent implements OnInit, OnDestroy {
 
   isLoaded = false;
+  isFilterShow = false;
   chartData = [];
 
   categories: ICategory[] = [];
@@ -59,4 +60,19 @@ export class HistoryComponent implements OnInit, OnDestroy {
     }
   }
 
+  openFilter() {
+    this.toggleFilter(true);
+  }
+
+  onFilterApply(filterData) {
+
+  }
+
+  onFilterCancel() {
+     this.toggleFilter(false);
+  }
+
+  private toggleFilter(dir: boolean) {
+    this.isFilterShow = dir;
+  }
 }
