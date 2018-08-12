@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { fadeStateTrigger } from '../../../../shared/animations/fade.animations';
 import { IMessage } from '../../../../shared/interface/message';
 import { UsersService } from '../../../../shared/services/users.service';
 import { IUser } from '../../../../shared/interface/user';
@@ -9,7 +10,8 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 @Component({
   selector: 'app-sign-in',
   templateUrl: './sign-in.component.html',
-  styleUrls: ['./sign-in.component.scss']
+  styleUrls: ['./sign-in.component.scss'],
+  animations: [fadeStateTrigger]
 })
 export class SignInComponent implements OnInit {
 
