@@ -9,7 +9,7 @@ import { SystemComponent } from './pages/system/system.component';
 
 const routes = [
   {
-    path: 'system',
+    path: '',
     component: SystemComponent,
     children: [
       {
