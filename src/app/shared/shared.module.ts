@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { DropdownDirective } from './directives/dropdown.directive';
+import { LoaderComponent } from './components/loader/loader.component';
 
 @NgModule({
   imports: [
@@ -11,12 +12,13 @@ import { DropdownDirective } from './directives/dropdown.directive';
     FormsModule,
     NgxChartsModule
   ],
-  declarations: [DropdownDirective],
+  declarations: [DropdownDirective, LoaderComponent],
   exports: [
     ReactiveFormsModule,
     FormsModule,
     DropdownDirective,
-    NgxChartsModule
+    NgxChartsModule,
+    LoaderComponent
   ]
 })
 export class SharedModule { }
