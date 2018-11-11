@@ -1,0 +1,7 @@
+<span class="header__date">{{ date | date: 'dd.MM.yyyy' }}</span>
+
+<div class="header__right">
+  <app-user-menu [userName]="user?.name"
+                 (onLogout)="logout()">
+  </app-user-menu>
+</div>

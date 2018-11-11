@@ -1,0 +1,12 @@
+:host {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 10px;
+}
+
+.header {
+  &__date,
+  &__right {
+    align-self: center;
+  }
+}

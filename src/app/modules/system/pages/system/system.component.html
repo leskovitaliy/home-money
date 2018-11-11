@@ -1,0 +1,21 @@
+<div class="wrapper">
+  <!-- Left Sidebar  -->
+  <app-sidebar (toggleOpenSidebar)="toggleSideBar($event)"
+               [isHideSidebar]="isHideSideBar"
+               class="wrapper__sidebar">
+  </app-sidebar><!-- / Left Sidebar  -->
+
+  <div class="wrapper__content"
+       [class.wrapper__sidebar--hide]="isHideSideBar">
+
+    <!-- Header -->
+    <div class="wrapper__header">
+      <app-header></app-header>
+    </div><!-- / Header -->
+
+    <!-- Content pages  -->
+    <div class="container-fluid bg">
+      <router-outlet></router-outlet>
+    </div><!-- / Content pages  -->
+  </div>
+</div>

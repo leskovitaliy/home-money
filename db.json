@@ -11,16 +11,10 @@
       "password": "Test123",
       "name": "test2",
       "id": 2
-    },
-    {
-      "email": "test-admin2@gmail.com",
-      "password": "12345678",
-      "name": "Test",
-      "id": 3
     }
   ],
   "bill": {
-    "value": 60793,
+    "value": 60372,
     "currency": "RUB"
   },
   "categories": [
@@ -38,6 +32,16 @@
       "name": "Машина",
       "capacity": 7002,
       "id": 3
+    },
+    {
+      "name": "Аренда",
+      "capacity": 4250,
+      "id": 4
+    },
+    {
+      "name": "квартплата",
+      "capacity": 1200,
+      "id": 5
     }
   ],
   "events": [
@@ -104,6 +108,38 @@
       "date": "09.08.2018 21:33:35",
       "description": "eat",
       "id": 8
+    },
+    {
+      "type": "outcome",
+      "amount": 150,
+      "category": "2",
+      "date": "10.11.2018 19:49:36",
+      "description": "столовая",
+      "id": 9
+    },
+    {
+      "type": "outcome",
+      "amount": 150,
+      "category": 1,
+      "date": "10.11.2018 19:49:51",
+      "description": "столовая",
+      "id": 10
+    },
+    {
+      "type": "outcome",
+      "amount": 120,
+      "category": "2",
+      "date": "10.11.2018 19:50:09",
+      "description": "столовая",
+      "id": 11
+    },
+    {
+      "type": "outcome",
+      "amount": 1,
+      "category": 1,
+      "date": "10.11.2018 19:50:18",
+      "description": "",
+      "id": 12
     }
   ]
 }

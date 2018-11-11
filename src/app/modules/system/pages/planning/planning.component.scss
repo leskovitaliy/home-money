@@ -1,0 +1,29 @@
+:host {
+  display: block;
+  padding: 16px 15px 0;
+  height: 100%;
+}
+
+.planning-title {
+  padding: 10px 15px;
+  margin-bottom: 0;
+
+  h5 {
+    margin-bottom: 0;
+  }
+}
+
+.planning-content {
+  padding: 15px;
+}
+
+.progress {
+  height: 20px;
+  box-shadow: inset 1px 1px 32px black;
+}
+
+.progress-bar-name {
+  text-shadow: 1px 1px 2px black;
+  padding-left: 6px;
+  text-transform: capitalize;
+}

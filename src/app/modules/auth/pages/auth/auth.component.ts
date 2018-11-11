@@ -1,4 +1,4 @@
-import { Component, HostBinding, OnInit } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
 import { fadeStateTrigger } from '../../../../shared/animations/fade.animations';
 
 @Component({
@@ -7,13 +7,8 @@ import { fadeStateTrigger } from '../../../../shared/animations/fade.animations'
   styleUrls: ['./auth.component.scss'],
   animations: [fadeStateTrigger]
 })
-export class AuthComponent implements OnInit {
+export class AuthComponent {
 
   @HostBinding('@fade') a = true;
-
-  constructor() { }
-
-  ngOnInit() {
-  }
 
 }

@@ -1,0 +1,18 @@
+@import "../../../../../assets/variables";
+
+:host {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $gray-dark;
+}
+
+.container-form {
+  display: block;
+  width: 420px;
+  min-width: 260px;
+  padding: 20px 30px;
+  background-color: #ffffff;
+}
+

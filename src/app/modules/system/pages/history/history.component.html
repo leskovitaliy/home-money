@@ -1,0 +1,31 @@
+<div class="title">
+  <h3>Страница истории</h3>
+
+  <app-history-filter [categories]="categories"
+                      (onFilterApply)="onFilterApply($event)"
+                      (onFilterCancel)="onFilterCancel()">
+  </app-history-filter>
+</div>
+
+<hr />
+
+<div *ngIf="!isLoaded" class="text-center">
+  <app-loader></app-loader>
+</div>
+
+<div *ngIf="isLoaded">
+  <app-history-chart [data]="chartData"
+                     class="d-flex justify-content-center">
+  </app-history-chart>
+
+  <section class="section">
+    <div class="row">
+      <div class="col-md-12">
+        <app-history-events [categories]="categories"
+                            [events]="filterEvents">
+        </app-history-events>
+      </div>
+    </div>
+  </section>
+
+</div>

@@ -1,0 +1,30 @@
+@import "../../../../../assets/variables";
+
+.wrapper {
+  display: flex;
+  height: 100%;
+
+  &__content {
+    margin-left: 200px;
+    width: 100%;
+    min-height: 100vh;
+    transition: margin-left 0.2s ease-in-out;
+  }
+
+  &__header {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    background-color: #f0f3f6;
+    box-shadow: 0 0 3px #ccc;
+    transition: left .3s ease, padding-left .3s ease;
+  }
+}
+
+.wrapper__content.wrapper__sidebar--hide {
+  margin-left: 62px;
+}
+
+.bg {
+  height: 100%;
+}

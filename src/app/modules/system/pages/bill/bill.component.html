@@ -1,0 +1,26 @@
+<app-bill-title title='Страница счета'
+                [isRefreshing]="isRefresh"
+                (onRefresh)="onRefresh()">
+</app-bill-title>
+
+<hr />
+
+<section class="section">
+  <div class="row justify-content-center"
+       *ngIf="!isLoaded">
+    <app-loader></app-loader>
+  </div>
+
+  <div class="row"
+       *ngIf="isLoaded">
+
+    <div class="col-md-6">
+      <app-bill-card [bill]="bill"
+                     [currency]="currency">
+      </app-bill-card>
+    </div>
+    <div class="col-md-6">
+      <app-currency-card [currency]="currency"></app-currency-card>
+    </div>
+  </div>
+</section>

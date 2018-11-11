@@ -1,0 +1,31 @@
+<section class="d-flex">
+  <h3>Страница записей</h3>
+</section>
+
+<section *ngIf="!isLoaded">
+  <div class="row justify-content-center">
+    <app-loader></app-loader>
+  </div>
+</section>
+
+<section *ngIf="isLoaded">
+  <div class="row">
+    <div class="col-md-6">
+      <app-add-event [categories]="categories"></app-add-event>
+    </div>
+    <div class="col-md-6">
+      <app-add-category (onCategory)="addCategory($event)"></app-add-category>
+    </div>
+  </div>
+
+  <br />
+
+  <div class="row">
+    <div class="col-md-6">
+      <app-edit-category [categories]="categories"
+                         (onCategoryEdit)="categoryEdit($event)">
+      </app-edit-category>
+    </div>
+    <div class="col-md-6"></div>
+  </div>
+</section>

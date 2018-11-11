@@ -1,0 +1,80 @@
+@import "../../../../../assets/variables";
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 200px;
+  background-color: $gray-dark;
+  color: #fff;
+  transition: width 0.2s ease-in-out;
+
+  &__header-wrap {
+    height: 48px;
+    padding: 20px;
+    background-color: $gray;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  &__header {
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  &__header-icon:hover {
+    cursor: pointer;
+  }
+}
+
+// base menu
+
+.menu {
+  padding-top: 10px;
+  padding-left: 24px;
+  padding-right: 16px;
+  list-style-type: none;
+}
+
+.menu-item {
+  width: 100%;
+  margin-top: 4px;
+  margin-bottom: 8px;
+}
+
+.menu-link {
+  display: inline-flex;
+  color: $gray-light;
+}
+
+.menu-link:hover {
+  color: $white;
+  text-decoration: none;
+}
+
+.menu-icon {
+  min-width: 14px;
+  margin-right: 10px;
+  text-align: center;
+  align-self: center;
+}
+
+.menu-text {
+  opacity: 1;
+}
+
+// when move sidebar
+
+.sidebar--hide {
+  width: 62px;
+  overflow: hidden;
+
+  .menu-text {
+    display: inline-block;
+    max-width: 0;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+  }
+}

@@ -1,0 +1,56 @@
+<div class="card">
+  <h4>Счет</h4>
+
+  <br/>
+
+  <div class="d-flex justify-content-between">
+    <i class="fa fa-rub"></i>
+    <div class="value">{{ bill.value | number: '1.2' }}</div>
+  </div>
+
+  <div class="progress" style="height: 2px;">
+    <div class="progress-bar"
+         role="progressbar"
+         style="width: 100%;"
+         aria-valuenow="100"
+         aria-valuemin="0"
+         aria-valuemax="100">
+    </div>
+  </div>
+
+  <br/>
+
+  <div class="d-flex justify-content-between">
+    <i class="fa fa-euro"></i>
+    <div class="value">{{ euro | number: '1.2' }}</div>
+  </div>
+
+  <div class="progress" style="height: 2px;">
+    <div class="progress-bar"
+         role="progressbar"
+         style="width: 100%;"
+         aria-valuenow="100"
+         aria-valuemin="0"
+         aria-valuemax="100">
+    </div>
+  </div>
+
+  <br/>
+
+  <div class="d-flex justify-content-between">
+    <i class="fa fa-dollar"></i>
+    <div class="value">{{ dollar | number: '1.2' }}</div>
+  </div>
+
+  <div class="progress" style="height: 2px;">
+    <div class="progress-bar"
+         role="progressbar"
+         style="width: 100%;"
+         aria-valuenow="100"
+         aria-valuemin="0"
+         aria-valuemax="100">
+    </div>
+  </div>
+
+</div>
+

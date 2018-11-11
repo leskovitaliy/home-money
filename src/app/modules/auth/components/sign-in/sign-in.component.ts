@@ -5,7 +5,7 @@ import { fadeStateTrigger } from '../../../../shared/animations/fade.animations'
 import { IMessage } from '../../../../shared/interface/message';
 import { UsersService } from '../../../../shared/services/users.service';
 import { IUser } from '../../../../shared/interface/user';
-import { AuthService } from '../../../../shared/services/auth.service';
+import { AuthService } from '../../services/auth.service';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 
 @Component({

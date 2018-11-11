@@ -1,0 +1,51 @@
+<div class="card">
+
+  <div class="card-title">
+    <h3>Список событий</h3>
+
+    <div class="form-inline">
+      <div class="form-group">
+        <input type="text"
+               class="form-control"
+               [placeholder]="searchPlaceholder"
+               [(ngModel)]="searchValue" />
+      </div>
+      <app-dropdown-events-options (changeEvent)="changeCriteria($event)"></app-dropdown-events-options>
+    </div>
+  </div>
+
+  <div class="card-block">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>#</th>
+        <th>Сумма</th>
+        <th>Дата</th>
+        <th>Категория</th>
+        <th>Тип</th>
+        <th class="text-lg-center">Действие</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let item of events | filterEvents: searchValue: searchField;let i = index">
+        <th scope="row">{{ i + 1 }}</th>
+        <td>{{ item.amount | number: '1.2' }}</td>
+        <td>{{ item.date | customDate: 'DD.MM.YYYY HH:mm:ss' }}</td>
+        <td>{{ item.categoryName }}</td>
+        <td>
+                <span [ngClass]="getEventClass(item)">
+                  <span *ngIf="item.type === 'income'">Доход</span>
+                  <span *ngIf="item.type === 'outcome'">Расход</span>
+                </span>
+        </td>
+        <td class="text-lg-center">
+          <a [routerLink]="['/system/history', item.id]"
+             class="btn btn-outline-primary">
+            Открыть
+          </a>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

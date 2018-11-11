@@ -1,0 +1,12 @@
+<section class="title">
+  <h3>{{ title }}</h3>
+
+  <button class="btn btn-outline-dark btn-refresh"
+          type="button"
+          (click)="refresh()">
+
+    <i class="fa fa-refresh"
+       [class.refreshing]="isRefreshing">
+    </i>
+  </button>
+</section>

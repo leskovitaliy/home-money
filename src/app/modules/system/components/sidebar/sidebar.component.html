@@ -1,0 +1,47 @@
+<nav class="sidebar"
+     [class.sidebar--hide]="isHideSidebar">
+
+  <div class="sidebar__header-wrap">
+    <span *ngIf="!isHideSidebar"
+          class="sidebar__header">
+      Бухгалтерия
+    </span>
+
+    <i class="fa fa-arrow-left sidebar__header-icon"
+       [ngClass]="{'fa-arrow-right': isHideSidebar, 'fa-arrow': !isHideSidebar}"
+       aria-hidden="true"
+       (click)="toggleOpen()">
+    </i>
+  </div>
+
+  <ul class="menu">
+    <li class="menu-item"
+        routerLinkActive="active">
+      <a class="menu-link" [routerLink]="['/system', 'bill']">
+        <i class="fa fa-building-o menu-icon"></i>
+        <span class="menu-text">Счет</span>
+      </a>
+    </li>
+    <li class="menu-item"
+        routerLinkActive="active">
+      <a class="menu-link" [routerLink]="['/system', 'history']">
+        <i class="fa fa-flash menu-icon"></i>
+        <span class="menu-text">История</span>
+      </a>
+    </li>
+    <li class="menu-item"
+        routerLinkActive="active">
+      <a class="menu-link" [routerLink]="['/system', 'planning']">
+          <i class="fa fa-archive menu-icon"></i>
+          <span class="menu-text">Планирование</span>
+      </a>
+    </li>
+    <li class="menu-item">
+      <a class="menu-link" [routerLink]="['/system', 'records']">
+          <i class="fa fa-plus-square menu-icon"></i>
+          <span class="menu-text">Запись</span>
+      </a>
+    </li>
+  </ul>
+
+</nav>

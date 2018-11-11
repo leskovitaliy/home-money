@@ -1,0 +1,85 @@
+<div class="card">
+  <div class="card-title border-bottom">
+    <h5>Редактировть категорию</h5>
+  </div>
+
+  <div>
+    <div class="alert alert-{{ message.type }}"
+         *ngIf="message.text">
+      {{ message.text }}
+    </div>
+
+    <form #form="ngForm"
+          (ngSubmit)="onSubmit(form)">
+
+      <div class="form-group">
+        <label class="control-label"
+               for="e-select-category">
+          Выберете категорию
+        </label>
+        <select class="form-control"
+                id="e-select-category"
+                [(ngModel)]="currentCategoryId"
+                [ngModelOptions]="{standalone: true}"
+                (change)="onChangeCategory()">
+
+          <option *ngFor="let item of categories"
+                  [value]="item.id">
+                {{ item.name }}
+          </option>
+        </select>
+      </div>
+
+      <div class="form-group"
+           [ngClass]="{'has-error': name.invalid && name.touched}">
+
+        <label class="control-label"
+               for="e-category-name">
+          Введите название
+        </label>
+        <input type="text"
+               id="e-category-name"
+               class="form-control"
+               required
+               name="name"
+               #name="ngModel"
+               [ngModel]="currentCategory.name" />
+
+        <span *ngIf="name.invalid && name.touched"
+              class="form-text--invalid">
+          Название категории не может быть пустым
+        </span>
+
+      </div>
+
+      <div class="form-group"
+           [ngClass]="{'has-error': capacity.invalid && capacity.touched}">
+        <label class="control-label"
+               for="e-category-value">
+          Введите лимит
+        </label>
+        <input type="number"
+               id="e-category-value"
+               class="form-control"
+               name="capacity"
+               #capacity="ngModel"
+               [ngModel]="currentCategory.capacity"
+               required
+               min="1" />
+
+        <span *ngIf="capacity.invalid && capacity.touched"
+              class="form-text--invalid">
+          Поле не может быть пустым
+        </span>
+      </div>
+
+      <div class="d-flex justify-content-end">
+        <button type="submit"
+                class="btn btn-primary"
+                [disabled]="form.invalid">
+          Редактировать
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

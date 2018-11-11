@@ -1,0 +1,26 @@
+<div class="dropdown">
+  <button class="btn dropdown-toggle"
+          type="button"
+          id="btnMenu"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false">
+
+      <span class="name">
+        Здравствуйте, {{ userName }}
+      </span>
+  </button>
+
+  <div class="dropdown-menu" aria-labelledby="btnMenu">
+    <a class="dropdown-item"
+       [routerLink]="['/system', 'records']">
+      <i class="fa fa-gear icon"></i>
+      Сделать запись
+    </a>
+    <a class="dropdown-item"
+       (click)="logout()">
+      <i class="fa fa-power-off icon"></i>
+      Выйти
+    </a>
+  </div>
+</div>

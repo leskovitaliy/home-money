@@ -1,0 +1,30 @@
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle"
+          type="button"
+          id="btnEventsParams"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false">
+    Параметр
+  </button>
+
+  <div class="dropdown-menu"
+       aria-labelledby="btnEventsParams">
+    <a class="dropdown-item"
+       (click)="selectItem('amount')">
+      Сумма
+    </a>
+    <a class="dropdown-item"
+       (click)="selectItem('date')">
+      Дата
+    </a>
+    <a class="dropdown-item"
+       (click)="selectItem('category')">
+      Категория
+    </a>
+    <a class="dropdown-item"
+       (click)="selectItem('type')">
+      Тип
+    </a>
+  </div>
+</div>

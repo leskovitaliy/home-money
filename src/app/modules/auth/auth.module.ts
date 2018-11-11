@@ -1,11 +1,12 @@
-import { NgModule } from '@angular/core';
+import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AuthGuard } from '../../shared/services/auth.guard';
+import { AuthGuard } from './guards/auth.guard';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { AuthComponent } from './pages/auth/auth.component';
-import {AuthRoutingModule} from './auth-routing.module';
-import {SharedModule} from '../../shared/shared.module';
+import { AuthRoutingModule } from './auth-routing.module';
+import { SharedModule } from '../../shared/shared.module';
+import { AuthService } from './services/auth.service';
 
 @NgModule({
   imports: [
@@ -17,9 +18,16 @@ import {SharedModule} from '../../shared/shared.module';
     SignInComponent,
     SignUpComponent,
     AuthComponent
-  ],
-  providers: [
-    AuthGuard
   ]
 })
-export class AuthModule { }
+export class AuthModule {
+  static forRoot(): ModuleWithProviders {
+    return {
+      ngModule: AuthModule,
+      providers: [
+        AuthService,
+        AuthGuard
+      ]
+    };
+  }
+}

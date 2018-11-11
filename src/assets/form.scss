@@ -1,0 +1,16 @@
+@import "variables";
+
+.form-text--invalid {
+  color: $error-text;
+}
+
+.has-error {
+  input {
+    border-color: $error-text;
+  }
+
+  input:focus {
+    border-color: $error-text;
+    box-shadow: 0 0 0 0.2rem rgba(114, 28, 36, 0.25);
+  }
+}
