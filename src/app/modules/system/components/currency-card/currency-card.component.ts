@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ICurrency } from '../../interfaces/currency';
 
 @Component({
   selector: 'app-currency-card',
@@ -9,5 +10,5 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 export class CurrencyCardComponent {
   currencies: string[] = ['EUR', 'USD'];
 
-  @Input() currency: any;
+  @Input() currency: ICurrency;
 }

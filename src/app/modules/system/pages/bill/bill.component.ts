@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnIni
 import { combineLatest, Subscription } from 'rxjs';
 import { delay, takeWhile, tap } from 'rxjs/operators';
 import { IBill } from '../../interfaces/bill';
+import { ICurrency } from '../../interfaces/currency';
 import { BillService } from '../../services/bill.service';
 
 @Component({
@@ -32,9 +33,9 @@ export class BillComponent implements OnInit, OnDestroy {
       this.billService.getCurrency()
     ).pipe(
       takeWhile(() => this._alive),
-      tap(data => {
-        this.bill = data[0];
-        this.currency = data[1];
+      tap(([data, currency]: [IBill, ICurrency]) => {
+        this.bill = data;
+        this.currency = this.mapCurrency(currency);
         this.isLoaded = true;
         this.cdr.detectChanges();
       })
@@ -47,6 +48,22 @@ export class BillComponent implements OnInit, OnDestroy {
     if (this.currency$) {
       this.currency$.unsubscribe();
     }
+  }
+
+  mapCurrency(currency: ICurrency) {
+    const { base, date, rates, success, timestamp } = currency;
+    const _rates = {
+      EUR: rates['UAH'],
+      USD: parseInt(rates['UAH'], 10) / parseInt(rates['USD'], 10),
+    };
+
+    return {
+      base,
+      date,
+      rates: _rates,
+      success,
+      timestamp
+    };
   }
 
   onRefresh() {

@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 import { IBill } from '../../interfaces/bill';
+import { ICurrency, IRates } from '../../interfaces/currency';
 
 @Component({
   selector: 'app-bill-card',
@@ -9,17 +10,18 @@ import { IBill } from '../../interfaces/bill';
 })
 export class BillCardComponent implements OnInit {
   @Input() bill: IBill;
-  @Input() currency: any;
+  @Input() currency: ICurrency;
 
   dollar: number;
-  euro: number;
+  uah: number;
 
   constructor() { }
 
   ngOnInit() {
-    const { rates } = this.currency;
-    this.dollar = rates['USD'] * this.bill.value;
-    this.euro = rates['EUR'] * this.bill.value;
+    const rateUsd: number = parseInt(this.currency.rates['USD'], 10);
+
+    this.uah = this.bill.value;
+    this.dollar = rateUsd * this.bill.value;
   }
 
 }

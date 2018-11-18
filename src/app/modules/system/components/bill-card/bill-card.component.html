@@ -1,10 +1,10 @@
 <div class="card">
   <h4>Счет</h4>
 
-  <br/>
+  <!--<br/> TODO: fix display value by EUR
 
   <div class="d-flex justify-content-between">
-    <i class="fa fa-rub"></i>
+    <i class="fa fa-euro"></i>
     <div class="value">{{ bill.value | number: '1.2' }}</div>
   </div>
 
@@ -16,13 +16,13 @@
          aria-valuemin="0"
          aria-valuemax="100">
     </div>
-  </div>
+  </div>-->
 
   <br/>
 
   <div class="d-flex justify-content-between">
-    <i class="fa fa-euro"></i>
-    <div class="value">{{ euro | number: '1.2' }}</div>
+    <span title="uah" class="currency-icon">&#8372;</span>
+    <div class="value">{{ uah | number: '1.2' }}</div>
   </div>
 
   <div class="progress" style="height: 2px;">
@@ -38,7 +38,7 @@
   <br/>
 
   <div class="d-flex justify-content-between">
-    <i class="fa fa-dollar"></i>
+    <i class="fa fa-dollar currency-icon" title="y.e."></i>
     <div class="value">{{ dollar | number: '1.2' }}</div>
   </div>
 
