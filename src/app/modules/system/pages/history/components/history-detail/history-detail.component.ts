@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { mergeMap } from 'rxjs/operators';
@@ -10,10 +10,10 @@ import { EventsService } from '../../../../services/events.service';
 @Component({
   selector: 'app-history-detail',
   templateUrl: './history-detail.component.html',
-  styleUrls: ['./history-detail.component.scss']
+  styleUrls: ['./history-detail.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HistoryDetailComponent implements OnInit, OnDestroy {
-
   isLoaded = false;
   routeParams$: Subscription;
 
@@ -22,7 +22,8 @@ export class HistoryDetailComponent implements OnInit, OnDestroy {
 
   constructor(private route: ActivatedRoute,
               private eventsService: EventsService,
-              private categoriesService: CategoriesService) { }
+              private categoriesService: CategoriesService,
+              private cdr: ChangeDetectorRef) { }
 
   ngOnInit() {
     this.route.params
@@ -36,6 +37,7 @@ export class HistoryDetailComponent implements OnInit, OnDestroy {
       .subscribe((category: ICategory) => {
         this.category = category;
         this.isLoaded = true;
+        this.cdr.detectChanges();
       });
   }
 

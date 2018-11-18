@@ -1,0 +1,19 @@
+:host {
+  display: block;
+  padding: 16px 15px 0;
+}
+
+.title {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  h3 {
+    margin-bottom: 0;
+  }
+}
+
+.fa-arrow-left {
+  color: #3a4651;
+  align-self: center;
+}

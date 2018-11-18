@@ -1,41 +1,42 @@
-<div class="text-center" *ngIf="!isLoaded">Loading...</div>
-<div class="text-center"
-     *ngIf="isLoaded">
+<div class="row justify-content-center"
+     *ngIf="!isLoaded">
+  <app-loader></app-loader>
+</div>
 
-  <div class="title-block">
-    <h3 class="title">
-      <a [routerLink]="['/system/history']"><i class="fa fa-arrow-left"></i></a>
-      Страница записи № {{ event.id }}
-      <span class="sparkline bar"></span>
-    </h3>
+<div *ngIf="isLoaded">
+
+  <div class="title">
+    <a [routerLink]="['/system/history']">
+      <i class="fa fa-arrow-left"></i>
+    </a>&nbsp;
+    <h3>Страница записи № {{ event.id }}</h3>
   </div>
-  <section class="section">
-    <div class="row">
-      <div class="col-xs-6 col-xs-offset-3">
-        <div class="card"
-             [ngClass]="{
-             'card-success': event.type === 'income',
-             'card-danger': event.type === 'outcome'
-             }">
-          <div class="card-header">
-            <div class="header-block">
-              <p class="title">
-                <span *ngIf="event.type === 'income'">Доход</span>
-                <span *ngIf="event.type === 'outcome'">Расход</span>
-              </p>
-            </div>
-          </div>
-          <div class="card-block">
-            <ul>
-              <li>Сумма: <strong>{{ event.amount | number: '1.2'}} P</strong></li>
-              <li>Категория: <strong>{{ category.name }}</strong></li>
-              <li>Комментарий: <strong>{{ event.description }}</strong></li>
-            </ul>
-          </div>
-          <div class="card-footer">{{ event.date }}</div>
+
+  <hr />
+
+  <div class="card">
+    <h5 class="card-header text-white"
+        [ngClass]="{'bg-success': event.type === 'income', 'bg-danger': event.type === 'outcome'}">
+      <span *ngIf="event.type === 'income'">Доход</span>
+      <span *ngIf="event.type === 'outcome'">Расход</span>
+    </h5>
+    <div class="card-body">
+      <div class="d-flex flex-column">
+        <div>
+          Сумма: <strong>{{ event.amount | number: '1.2'}} P</strong>
+        </div>
+        <div>
+          Категория: <strong>{{ category.name }}</strong>
+        </div>
+        <div>
+          Комментарий: <strong>{{ event.description }}</strong>
         </div>
       </div>
-    </div>
-  </section>
 
+      <hr />
+
+      <p class="card-text">{{ event.date }}</p>
+    </div>
+
+  </div>
 </div>
