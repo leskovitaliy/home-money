@@ -14,7 +14,7 @@
     }
   ],
   "bill": {
-    "value": 60372,
+    "value": 59742,
     "currency": "RUB"
   },
   "categories": [
@@ -140,6 +140,22 @@
       "date": "10.11.2018 19:50:18",
       "description": "",
       "id": 12
+    },
+    {
+      "type": "outcome",
+      "amount": 630,
+      "category": 1,
+      "date": "18.11.2018 13:56:00",
+      "description": "Люстра",
+      "id": 13
+    },
+    {
+      "type": "outcome",
+      "amount": 0,
+      "category": 1,
+      "date": "18.11.2018 13:56:02",
+      "description": " ",
+      "id": 14
     }
   ]
 }
